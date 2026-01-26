@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Appointments</title>
+</head>
+<body>
+
+<h2>All Appointments</h2>
+
+<form method="GET">
+    <input type="text" name="search" placeholder="Search by name/email/mobile">
+    <button type="submit">Search</button>
+</form>
+
+<br>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Department</th>
+        <th>Message</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{ row.name }}</td>
+        <td>{{ row.email }}</td>
+        <td>{{ row.mobile }}</td>
+        <td>{{ row.department }}</td>
+        <td>{{ row.message }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/register">Back to Form</a>
+
+</body>
+</html>
